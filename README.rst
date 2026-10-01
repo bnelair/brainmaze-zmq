@@ -36,7 +36,7 @@ The project has 2 main protected branches *main* that contains official software
 To implement a new feature a new branch should be created from the *dev* branch with name pattern of *developer_identifier/feature_name*.
 
 After the feature is implemented, a pull request can be created to merge the feature branch into the *dev* branch with. Pull requests need to be reviewed by the code owners.
-Drafting of new releases will be performed by the code owners in using pull request from *dev* to *main* and drafting a new release on GitHub.
+Releases are automated and never bypass branch protection: a code owner runs the **Prepare release** action, which opens a ``Release vX.Y.Z`` pull request bumping ``[project].version``; merging it publishes to PyPI (Trusted Publishing), tags the version and creates the GitHub release. Never edit ``[project].version`` in a normal pull request (the *Version guard* check rejects it). See ``RELEASING.md`` and the family guide https://github.com/bnelair/brainmaze/blob/main/RELEASING.md.
 
 New functions need to be implemented with Sphinx compatible docstrings. The documentation is automatically generated from the docstrings using Sphinx.
 
