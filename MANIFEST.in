@@ -3,6 +3,3 @@
 # the shared artifact check (brainmaze-sphinx check-dist.yml, `dist-check: error` in
 # ci.yml and release.yml), which fails on any non-code file, test, demo or doc.
 prune tests
-prune docs_src
-prune img
-prune .github
